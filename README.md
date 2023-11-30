@@ -67,6 +67,28 @@ Was able to execute the provided generate_events.py file to obtain the required 
 - 每次会话的社交互动次数  
 
 
+## 任务4: 玩家流失的预测模型  
+### 详细步骤注释请见jupyter notebook
 
+1. Getting data from the game_events.csv file  
 
-## 任务4: 玩家流失的预测模型
+2. Feature Engineering:  
+- 总会话次数  
+- 每月会话次数  
+- 设备类型  
+
+Target: column 'lost' (0 = 不停止玩游戏；1 = 停止玩游戏)  
+Detailed explanation is included in the jupyter notebook
+
+3. 模型选用：分类问题，选用随机森林作为我们的模型 (n_estimator = 100) 
+
+4. 模型评估：
+
+- Precision(positive predictive value): tp / (tp + fp); Total number of true predictive churn divided by the total number of predictive churn; High Precision means low fp, not many return users were predicted as churn users.  
+- Recall(sensitivity, true positive rate): tp / (tp + fn) Predict most postive or churn user correctly. High recall means low fn, not many churn users were predicted as return users.  
+
+<img width="475" alt="evaluation" src="https://github.com/liyi61/joycastle-de-interview/assets/39036575/494b4c0a-ac05-48ef-ac44-88dcfbbbd96d">
+
+<img width="381" alt="confusionmatrix" src="https://github.com/liyi61/joycastle-de-interview/assets/39036575/ebfada4a-8f0d-4fd2-90da-ee7e42f76ab0">
+
+（由于是模拟生成数据，特征不足，类别不平衡都会导致模型效果不好，以及考虑到时间问题没有做模型优化，这个Jupyter notebook主要是作为流程展示）
