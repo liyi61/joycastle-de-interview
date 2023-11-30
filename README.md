@@ -1,7 +1,7 @@
 # JoyCastle - 数据工程与分析能力测试项目
 
 ## 任务1: 模拟数据集生成
-Was able to execute the provided generate_events.py file to obtain the required CSV file
+Was able to execute the provided generate_events.py file to obtain the required CSV file  
 对所提供的脚本做了以下修改：
 - NUM_PLAYERS 从 100 改成 100，000  
 - SIMULATION_TIME 从90天 改成 180天  
@@ -45,7 +45,27 @@ Was able to execute the provided generate_events.py file to obtain the required 
 - 我使用的解决办法是先把数据写进temp table，另外再建立一个表（命名为game_events)基于正确的table schema (EventID作为primary key，EventTimestamp数据类型为datetime），然后把数据从temp table拷贝进game_events
 
 
-## 任务3: 分析仪表板开发
+## 任务3: 分析仪表板开发  
+仪表板工具：Power BI  
+数据源：使用sqlite作为数据源，使用ODBC connection，选择SQLite3 Datasource，具体设置如下图：  
+![ODBCConnector](https://github.com/liyi61/joycastle-de-interview/assets/39036575/8d1dc666-3bfb-4eb7-b808-6f2c368a39fd)  
+
+交互式仪表板截图如下（.pbix文件已经push到GitHub）：
+![任务3-BI仪表盘截图](https://github.com/liyi61/joycastle-de-interview/assets/39036575/5b108d4f-c05b-4c33-8e30-b393d4f4f323)  
+
+包含的可视化有：  
+- 每日活跃用户数（DAU)  
+- DAU走势
+- 平均会话时长（分钟）
+- in-app purchase总收入  
+- 每次会话平均消费金额  
+- in-app purchase over time (month)  
+- 180天内消费排名前10玩家  
+- 玩家来自的国家分部情况
+- deivces使用情况
+- 玩家的活跃情况分布  
+- 每次会话的社交互动次数  
+
 
 
 
