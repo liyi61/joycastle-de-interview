@@ -12,7 +12,7 @@ Was able to execute the provided generate_events.py file to obtain the required 
 
 ## 任务2: 数据管道和ETL过程
 **数据源**：previously generated csv file (*game_events.csv*)  
-- summary about the data:
+- summary about the *source* data:
   - 1，265，110 rows
   - 7 columns
     - EventID: Object, Not null
@@ -25,7 +25,15 @@ Was able to execute the provided generate_events.py file to obtain the required 
 
 **数据destination**：sqlite db  
   - 数据库名字: *joycastle*  
-  - table名字: *game_events*
+  - table名字: *game_events*  
+  	- CREATE TABLE `game_events` (
+              `EventID` text PRIMARY KEY,
+              `PlayerID` text,
+              `EventTimestamp` datetime,
+              `EventType` text,
+              `EventDetails` text,
+              `DeviceType` text,
+              `Location` text;  
 
 ### Data Extraction
 通过pandas的read_csv读取csv的数据到dataframe。
